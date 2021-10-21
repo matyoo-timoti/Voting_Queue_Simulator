@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         var person = new Person("matt", "cab", true, 0);
         var person1 = new Person("kat", "cab", true, 1);
-        anim.queue(10, "Matt", 2);
+        anim.queue(10, "NAME", 1 );
     }
 
     private static void displayQueue(Person current) {
