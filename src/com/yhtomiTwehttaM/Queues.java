@@ -1,33 +1,32 @@
 package com.yhtomiTwehttaM;
 
 import java.util.ArrayDeque;
-import java.util.Queue;
 
 public class Queues {
-    private static final java.util.Queue<Person> queueN = new ArrayDeque<>();
-    private static final java.util.Queue<Person> queueP = new ArrayDeque<>();
+    private static final java.util.Queue<Person> normalQueue = new ArrayDeque<>();
+    private static final java.util.Queue<Person> priorityQueue = new ArrayDeque<>();
     private int altCount;
 
     public void enqueue(Person person) {
         if (person.isPriority()) {
-            queueP.add(person);
-        } else queueN.add(person);
+            priorityQueue.add(person);
+        } else normalQueue.add(person);
     }
 
     public Person dequeue() {
-        if (queueN.isEmpty() && queueP.isEmpty()) {
+        if (normalQueue.isEmpty() && priorityQueue.isEmpty()) {
             System.out.println("There is no items in the queue!");
             return null;
         }
         if (altCount % 2 == 0) {
-            if (queueN.isEmpty()) {
+            if (normalQueue.isEmpty()) {
                 altCount++;
                 return dequeueP();
             }
             altCount++;
             return dequeueN();
         }
-        if (queueP.isEmpty()) {
+        if (priorityQueue.isEmpty()) {
             altCount++;
             return dequeueN();
         }
@@ -36,10 +35,10 @@ public class Queues {
     }
 
     private static Person dequeueP() {
-        return queueP.poll();
+        return priorityQueue.poll();
     }
 
     private static Person dequeueN() {
-        return queueN.poll();
+        return normalQueue.poll();
     }
 }
