@@ -1,55 +1,45 @@
 package com.yhtomiTwehttaM;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Queue;
-import java.util.Stack;
 
 public class Queues {
-    private static final java.util.Queue<Person> normalQueue = new ArrayDeque<>();
-    private static final java.util.Queue<Person> priorityQueue = new ArrayDeque<>();
+    private static final java.util.Queue<Person> queueN = new ArrayDeque<>();
+    private static final java.util.Queue<Person> queueP = new ArrayDeque<>();
+    private int altCount;
 
-    private static void enqueue(Person person) {
-        normalQueue.add(person);
+    public void enqueue(Person person) {
+        if (person.isPriority()) {
+            queueP.add(person);
+        } else queueN.add(person);
     }
 
-    private static void enqueuePriority(Person person){
-        priorityQueue.add(person);
-    }
-
-    public Person deque() {
-        if (normalQueue.isEmpty()) {
-            System.out.println("There is no queue!");
+    public Person dequeue() {
+        if (queueN.isEmpty() && queueP.isEmpty()) {
+            System.out.println("There is no items in the queue!");
             return null;
         }
-        return normalQueue.remove();
+        if (altCount % 2 == 0) {
+            if (queueN.isEmpty()) {
+                altCount++;
+                return dequeueP();
+            }
+            altCount++;
+            return dequeueN();
+        }
+        if (queueP.isEmpty()) {
+            altCount++;
+            return dequeueN();
+        }
+        altCount++;
+        return dequeueP();
     }
 
-    public Person dequePriority() {
-        if (priorityQueue.isEmpty()) {
-            System.out.println("There is no queue!");
-            return null;
-        }
-        return priorityQueue.remove();
+    private static Person dequeueP() {
+        return queueP.poll();
     }
 
-    public void segregate(ArrayList<Person> personsList) {
-        for (Person person : personsList) {
-            if (person.isPriority())
-                enqueue(person);
-            else enqueuePriority(person);
-        }
-    }
-
-    public Queue<Person> intoOneLine() {
-        java.util.Queue<Person> newQ = new ArrayDeque<>();
-        while(!(priorityQueue.isEmpty()) || !(normalQueue.isEmpty()))
-        {
-            if (normalQueue.isEmpty())
-                newQ.add(normalQueue.poll());
-            if (priorityQueue.isEmpty())
-                newQ.add(priorityQueue.poll());
-        }
-        return newQ;
+    private static Person dequeueN() {
+        return queueN.poll();
     }
 }

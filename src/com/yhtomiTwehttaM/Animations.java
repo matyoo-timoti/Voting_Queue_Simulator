@@ -7,38 +7,34 @@ import java.awt.event.KeyEvent;
 
 public class Animations {
 
-    public void queue(int repeat, String name, int num) {
+    public void anim1(int repeat, String name, int num) {
         var rb = Color.RED_BRIGHT;
         var bv = Color.BLUE_BRIGHT;
-        var gb = Color.GREEN_BRIGHT;
-        var wbb = Color.WHITE_BOLD_BRIGHT;
         var gbb = Color.GREEN_BOLD_BRIGHT;
         var yb = Color.YELLOW_BRIGHT;
-        var bckgrnd = Color.WHITE_BACKGROUND;
+        var bg = Color.WHITE_BACKGROUND;
+        var blk = Color.BLACK_BRIGHT;
+        var y = Color.YELLOW_BRIGHT;
         var res =Color.RESET;
         System.out.printf("""
                    %sVoting Station%s
-                 ▕%s▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔%s▏
-                 ▕%s └ └ └ └ └ └ └  %s▏
-                 ▕%s └ └ └ └ └ └ └  %s▏%s[ %s %s ]%s
-                 ▕%s  ▁▁▁  └ └ └ └  %s▏
-                 ▕%s▁▁%s▏╍▕%s▁▁▁▁▁▁▁▁▁▁▁%s▏
+                  %s%s▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔%s
+                  %s%s ▇ ▇ ▇ ▇ ▇ ▇ ▇  %s
+                  %s%s ▇ ▇ ▇ ▇ ▇ ▇ ▇  %s
+                  %s%s  ▁▁▁  ▇ ▇ ▇ ▇  %s
+                  %s%s▁▁%s▏%s╍%s▕%s%s▁▁▁▁▁▁▁▁▁▁▁%s
                 """,
                 gbb, res, //Bldg. name
-                bckgrnd, res, //Top (5th Level)
-                bckgrnd, res, // Above mid (4th)
-                bckgrnd, res, // Mid (3rd)
-                wbb, num, name, res, // Number and Name
-                bckgrnd, res, // Below mid (2nd)
-                bckgrnd, res, // Ground (left side) (1st)
-                bckgrnd, res // Ground (right side) (1st)
+                blk, bg, res, //Top (5th Level)
+                blk, bg, res, // Above mid (4th)
+                blk, bg, res, // Mid (3rd)
+                blk, bg, res, // Below mid (2nd)
+                blk, bg, res, // Ground (left side) (1st)
+                y, res, //doorknob
+                blk, bg, res // Ground (right side) (1st)
                 );
         for (int i = 0; i<repeat ; i++) {
-            System.out.printf("               %s🧍%s %s🧍%s %s🧍%s  \r",
-                    rb, res, //First in line
-                    bv, res, //2nd
-                    yb, res //3rd
-                    );
+            System.out.print("               🧍 🧍 🧍  \r");
             wait(300);
             System.out.print("               🚶 🧍 🧍  \r");
             wait(300);
@@ -60,9 +56,8 @@ public class Animations {
             wait(300);
             System.out.print("     🚶         🧍 🧍 🧍 \r");
             wait(300);
-            System.out.print("     🕴         🧍 🧍 🧍 \r");
+            System.out.print("     ⌃         🧍 🧍 🧍 \r");
             wait(300);
-            System.out.print("               🧍 🧍 🧍 \r");
         }
     }
 
