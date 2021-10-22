@@ -66,6 +66,23 @@ public class Animations {
         }
     }
 
+    public static void scrollingText(String text) {
+        String pls = "Please enter ";
+        String space = "          ";
+        StringBuilder newText = new StringBuilder();
+        newText.append(space).append(pls).append(text).append(space);
+        int i;
+        int l = newText.length();
+        for (i = 0; i < l; i++) {
+            if (i == l-9) {
+                break;
+            }
+            System.out.printf("[ %s ]\r", newText.substring(i, i + 10));
+            wait(200);
+        }
+        System.out.println("\r");
+    }
+
     public static void wait(int ms) {
         try {
             Thread.sleep(ms);
