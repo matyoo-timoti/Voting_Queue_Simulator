@@ -8,10 +8,13 @@ public class Main {
     public static void main(String[] args) {
         var queue = new Queues();
         int count = 0;
-        Animations.titleAnim();
+        Animations.maximizeConsole();
+        Animations.titleAnim(100);
         System.out.println();
         System.out.printf("%sVOTING QUEUE SIMULATOR%s\n", Color.CYAN_BOLD_BRIGHT, Color.RESET);
-        System.out.printf("%sBy Group 6 BSIT-2C %s\n", Color.MAGENTA_BRIGHT, Color.RESET);
+        System.out.print(Color.MAGENTA_BOLD_BRIGHT);
+        Animations.scrollingTextLn("By Group 6 | BSIT-2C | 2021", 70);
+        System.out.print(Color.RESET);
         String ans = "";
         bigLoop:
         while (true) {
@@ -23,6 +26,8 @@ public class Main {
                 input.nextLine();
                 System.out.println();
             }
+            Animations.clearConsole();
+            Animations.wait(500);
             ans = "";
             queue.altSort(queue.getQueue());
             while (!ans.equals("a")) {
@@ -37,6 +42,14 @@ public class Main {
                     }
                     break bigLoop;
                 }
+//                System.out.printf("%sVOTING QUEUE SIMULATOR%s\n", Color.CYAN_BOLD_BRIGHT, Color.RESET);
+                System.out.print(Color.CYAN);
+                System.out.println("""
+                        
+                        █ █ █▀█ ▀█▀ █ █▄ █ █▀▀  █▀█ █ █ █▀▀ █ █ █▀▀   █▀ █ █▀▄▀█ █ █ █   ▄▀█ ▀█▀ █▀█ █▀█
+                        ▀▄▀ █▄█  █  █ █ ▀█ █▄█  ▀▀█ █▄█ ██▄ █▄█ ██▄   ▄█ █ █ ▀ █ █▄█ █▄▄ █▀█  █  █▄█ █▀▄
+                        """);
+                System.out.print(Color.RESET);
                 displayQueue(queue.dequeue());
                 Animations.anim1(1);
                 menu();
@@ -44,9 +57,9 @@ public class Main {
                 input.nextLine();
                 if (ans.equals("x"))
                     break bigLoop;
+                Animations.clearConsole();
+                Animations.wait(500);
             }
-            Animations.clearConsole();
-            Animations.wait(500);
         }
         System.out.println();
         System.out.println("\nSuccessfully exited the program. \nPlease come again!");
@@ -54,9 +67,9 @@ public class Main {
     }
 
     private static Person addPerson(int count) {
-        boolean isPriority = true;
+        boolean isPriority = false;
         System.out.println();
-        System.out.println("Insert new individual");
+        System.out.println("Insert new individual:");
         System.out.println("No. " + count);
         System.out.print("First name: ");
         String firstname = input.nextLine();
@@ -66,7 +79,7 @@ public class Main {
         String ans = input.next();
         input.nextLine();
         if (!(ans.charAt(0) == 'n'))
-            isPriority = false;
+            isPriority = true;
         System.out.println();
         return new Person(firstname, lastname, isPriority, count);
     }
@@ -75,7 +88,7 @@ public class Main {
         System.out.printf("""
                                                 
                         ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺
-                          %sNext in line:%s
+                          %sFirst in line:%s
                           No. %s: %s %s %s%s%s
                         ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺
                                                 
@@ -97,6 +110,6 @@ public class Main {
                 Color.GREEN_BOLD, Color.RESET,
                 Color.YELLOW_BOLD, Color.RESET,
                 Color.RED_BOLD_BRIGHT, Color.RESET);
-        System.out.print("Answer: ");
+        System.out.print(" Choose from the options: ");
     }
 }
