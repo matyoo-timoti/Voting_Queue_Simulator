@@ -228,6 +228,31 @@ public class Animations {
         }
     }
 
+    public static void maximizeConsole() {
+        /*
+        Maximizes the size of the console/output pane.
+        Works on IntelliJ IDEA. Change your IDE's 'Maximize
+        Console' shortcut to SHIFT + CONTROL + QUOTE (")
+        */
+        try {
+            click(1200, 700);
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+        try {
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_SHIFT);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_QUOTE);
+            robot.keyRelease(KeyEvent.VK_SHIFT);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_QUOTE);
+        } catch (AWTException ex) {
+            ex.printStackTrace(System.err);
+        }
+    }
+
+
     public static void click(int x, int y) throws AWTException {
         Robot bot = new Robot();
         bot.mouseMove(x, y);
