@@ -1,44 +1,57 @@
 package com.yhtomiTwehttaM;
 
-import java.util.ArrayDeque;
+import java.util.*;
 
 public class Queues {
-    private static final java.util.Queue<Person> normalQueue = new ArrayDeque<>();
-    private static final java.util.Queue<Person> priorityQueue = new ArrayDeque<>();
-    private int altCount;
 
-    public void enqueue(Person person) {
-        if (person.isPriority()) {
-            priorityQueue.add(person);
-        } else normalQueue.add(person);
+    private final Queue<Person> queue = new ArrayDeque<>();
+
+    public Queue<Person> getQueue() {
+        return queue;
+    }
+
+    public void enqueue(Person newPerson) {
+        queue.add(newPerson);
     }
 
     public Person dequeue() {
-        if (normalQueue.isEmpty() && priorityQueue.isEmpty()) {
-            System.out.println("There is no items in the queue!");
-            return null;
+        return queue.poll();
+    }
+
+    public void altSort(Queue<Person> list) {
+        ArrayList<Person> temp1 = new ArrayList<>();
+        ArrayList<Person> temp2 = new ArrayList<>();
+
+//        Segregates the priority and non-priority Persons into two arrays.
+        while (!list.isEmpty()) {
+            Person p = list.remove();
+            if (p.isPriority()) {
+                temp1.add(p);
+            } else temp2.add(p);
         }
-        if (altCount % 2 == 0) {
-            if (normalQueue.isEmpty()) {
-                altCount++;
-                return dequeueP();
+
+/*
+       If both temp queues are not empty, adding the contents of
+       both arrays on the final queue by alternation.
+*/
+        for (int i = 0; i < temp1.size() + temp2.size() + 2; i++) {
+            if (!temp1.isEmpty()) {
+                list.add(temp1.remove(0));
             }
-            altCount++;
-            return dequeueN();
+            if (!temp2.isEmpty()) {
+                list.add(temp2.remove(0));
+            }
         }
-        if (priorityQueue.isEmpty()) {
-            altCount++;
-            return dequeueN();
+/*
+        Checks if there are any remaining item on
+        either array and transfers it to the queue.
+*/
+        if (!temp1.isEmpty() || !temp2.isEmpty()) {
+            if ((temp1.get(0) != null)) {
+                list.add(temp1.remove(0));
+            } else {
+                list.add(temp2.remove(0));
+            }
         }
-        altCount++;
-        return dequeueP();
-    }
-
-    private static Person dequeueP() {
-        return priorityQueue.poll();
-    }
-
-    private static Person dequeueN() {
-        return normalQueue.poll();
     }
 }
