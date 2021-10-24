@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
-public class Animations {
+public class Misc {
 
     public static void anim1(int repeat) {
         var gbb = Color.GREEN_BOLD_BRIGHT;

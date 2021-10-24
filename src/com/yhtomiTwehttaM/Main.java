@@ -8,12 +8,12 @@ public class Main {
     public static void main(String[] args) {
         var queue = new Queues();
         int count = 0;
-        Animations.maximizeConsole();
-        Animations.titleAnim(100);
+        Misc.maximizeConsole();
+        Misc.titleAnim(100);
         System.out.println();
         System.out.printf("%sVOTING QUEUE SIMULATOR%s\n", Color.CYAN_BOLD_BRIGHT, Color.RESET);
         System.out.print(Color.MAGENTA_BOLD_BRIGHT);
-        Animations.scrollingTextLn("By Group 6 | BSIT-2C | 2021", 70);
+        Misc.scrollingTextLn("By Group 6 | BSIT-2C | 2021", 70);
         System.out.print(Color.RESET);
         String ans = "";
         bigLoop:
@@ -26,8 +26,8 @@ public class Main {
                 input.nextLine();
                 System.out.println();
             }
-            Animations.clearConsole();
-            Animations.wait(500);
+            Misc.clearConsole();
+            Misc.wait(500);
             ans = "";
             queue.altSort(queue.getQueue());
             while (!ans.equals("a")) {
@@ -51,14 +51,14 @@ public class Main {
                         """);
                 System.out.print(Color.RESET);
                 displayQueue(queue.dequeue());
-                Animations.anim1(1);
+                Misc.anim1(1);
                 menu();
                 ans = input.next();
                 input.nextLine();
                 if (ans.equals("x"))
                     break bigLoop;
-                Animations.clearConsole();
-                Animations.wait(500);
+                Misc.clearConsole();
+                Misc.wait(500);
             }
         }
         System.out.println();
