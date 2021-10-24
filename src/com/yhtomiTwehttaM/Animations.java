@@ -7,10 +7,7 @@ import java.awt.event.KeyEvent;
 public class Animations {
 
     public static void anim1(int repeat) {
-        var rb = Color.RED_BRIGHT;
-        var bv = Color.BLUE_BRIGHT;
         var gbb = Color.GREEN_BOLD_BRIGHT;
-        var yb = Color.YELLOW_BRIGHT;
         var bg = Color.WHITE_BACKGROUND;
         var blk = Color.BLACK_BRIGHT;
         var y = Color.YELLOW_BRIGHT;
@@ -56,42 +53,43 @@ public class Animations {
             System.out.print("     🚶         🧍 🧍 🧍 \r");
             wait(300);
             System.out.print("     ⌃         🧍 🧍 🧍 \r");
+            wait(300);
             System.out.print("               🧍 🧍 🧍 \n");
             wait(300);
         }
     }
 
-    public static void titleAnim() {
+    public static void titleAnim(int msSpeed) {
         String[][] tAnim = new String[][]{
                 {
                         " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
                         " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "██╗░░░██╗░█████╗░████████╗██╗███╗░░██╗░██████╗░  ░██████╗░██╗░░░██╗███████╗██╗░░░██╗███████╗\n"
+                        "██╗   ██╗ █████╗ ████████╗██╗███╗  ██╗ ██████╗    ██████╗ ██╗   ██╗███████╗██╗   ██╗███████╗\n"
                 },
                 {
                         " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
                         " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "██║░░░██║██╔══██╗╚══██╔══╝██║████╗░██║██╔════╝░  ██╔═══██╗██║░░░██║██╔════╝██║░░░██║██╔════╝\n"
+                        "██║   ██║██╔══██╗╚══██╔══╝██║████╗ ██║██╔════╝   ██╔═══██╗██║   ██║██╔════╝██║   ██║██╔════╝\n"
                 },
                 {
                         " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
                         " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "╚██╗░██╔╝██║░░██║░░░██║░░░██║██╔██╗██║██║░░██╗░  ██║██╗██║██║░░░██║█████╗░░██║░░░██║█████╗░░\n"
+                        "╚██╗ ██╔╝██║  ██║   ██║   ██║██╔██╗██║██║  ██╗   ██║██╗██║██║   ██║█████╗  ██║   ██║█████╗  \n"
                 },
                 {
                         " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
                         " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "░╚████╔╝░██║░░██║░░░██║░░░██║██║╚████║██║░░╚██╗  ╚██████╔╝██║░░░██║██╔══╝░░██║░░░██║██╔══╝░░\n"
+                        " ╚████╔╝ ██║  ██║   ██║   ██║██║╚████║██║  ╚██╗  ╚██████╔╝██║  ░██║██╔══╝  ██║  ░██║██╔══╝  \n"
                 },
                 {
                         " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
                         " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "░░╚██╔╝░░╚█████╔╝░░░██║░░░██║██║░╚███║╚██████╔╝  ░╚═██╔═╝░╚██████╔╝███████╗╚██████╔╝███████╗\n"
+                        "  ╚██╔╝  ╚█████╔╝  ░██║   ██║██║ ╚███║╚██████╔╝   ╚═██╔═╝ ╚██████╔╝███████╗╚██████╔╝███████╗\n"
                 },
                 {
                         " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
                         " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "░░░╚═╝░░░░╚════╝░░░░╚═╝░░░╚═╝╚═╝░░╚══╝░╚═════╝░  ░░░╚═╝░░░░╚═════╝░╚══════╝░╚═════╝░╚══════╝\n"
+                        "   ╚═╝    ╚════╝    ╚═╝   ╚═╝╚═╝  ╚══╝ ╚═════╝      ╚═╝    ╚═════╝ ╚══════╝ ╚═════╝ ╚══════╝\n"
                 },
                 {
                         " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
@@ -99,34 +97,34 @@ public class Animations {
                         "                                                                                            \n"
                 },
                 {
-                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
-                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "░██████╗░███████╗███╗░░██╗███████╗██████╗░░█████╗░████████╗░█████╗░██████╗░\n"
+                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
+                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
+                        " ██████╗██╗███╗   ███╗██╗   ██╗██╗      █████╗ ████████╗ █████╗ ██████╗ \n"
                 },
                 {
-                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
-                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "██╔════╝░██╔════╝████╗░██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗\n"
+                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
+                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
+                        "██╔════╝██║████╗░████║██║   ██║██║     ██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗\n"
                 },
                 {
-                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
-                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "██║░░██╗░█████╗░░██╔██╗██║█████╗░░██████╔╝███████║░░░██║░░░██║░░██║██████╔╝\n"
+                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
+                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
+                        "╚█████╗ ██║██╔████╔██║██║   ██║██║     ███████║   ██║   ██║  ██║██████╔╝\n"
                 },
                 {
-                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
-                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "██║░░╚██╗██╔══╝░░██║╚████║██╔══╝░░██╔══██╗██╔══██║░░░██║░░░██║░░██║██╔══██╗\n"
+                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
+                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
+                        " ╚═══██╗██║██║╚██╔╝██║██║   ██║██║     ██╔══██║   ██║   ██║  ██║██╔══██╗\n"
                 },
                 {
-                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
-                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "╚██████╔╝███████╗██║░╚███║███████╗██║░░██║██║░░██║░░░██║░░░╚█████╔╝██║░░██║\n"
+                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
+                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
+                        "██████╔╝██║██║ ╚═╝ ██║╚██████╔╝███████╗██║  ██║   ██║   ╚█████╔╝██║  ██║\n"
                 },
                 {
-                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
-                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
-                        "░╚═════╝░╚══════╝╚═╝░░╚══╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝\n"
+                        " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
+                        " ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘ ⭘\r",
+                        "╚═════╝ ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚════╝ ╚═╝  ╚═╝\n"
                 },
                 {
                         " ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\r",
@@ -136,33 +134,62 @@ public class Animations {
 
         };
 //        System.out.print(Color.GREEN_BRIGHT);
-        for (int i = 0; i<tAnim.length; i++) {
+        for (int i = 0; i < tAnim.length; i++) {
             if (i == 13) {
                 System.out.print(Color.YELLOW_BRIGHT);
             }
-            for (int j =0; j < tAnim[i].length; j++) {
+            for (int j = 0; j < tAnim[i].length; j++) {
                 System.out.print(tAnim[i][j]);
-                wait(100);
+                wait(msSpeed);
             }
         }
         System.out.print(Color.RESET);
     }
 
-    public static void scrollingText(String text) {
-        String pls = "Please enter ";
-        String space = "          ";
+    public static void scrollingText(String text, int length, String leftBorder, String rightBorder, int msSpeed) {
+        StringBuilder space = new StringBuilder();
         StringBuilder newText = new StringBuilder();
-        newText.append(space).append(pls).append(text).append(space);
-        int i;
+        space.append(" ".repeat(Math.max(0, length)));
+        newText.append(space).append(text).append(space);
         int l = newText.length();
-        for (i = 0; i < l; i++) {
-            if (i == l - 9) {
+        for (int i = 0; i < l; i++) {
+            if (i == l - length + 1) {
                 break;
             }
-            System.out.printf("[ %s ]\r", newText.substring(i, i + 10));
-            wait(200);
+            System.out.printf("%s %s %s\r", leftBorder, newText.substring(i, i + length), rightBorder);
+            wait(msSpeed);
         }
-        System.out.println("\r");
+    }
+
+    public static void scrollingText(String text, int length, int msSpeed) {
+        StringBuilder space = new StringBuilder();
+        StringBuilder newText = new StringBuilder();
+        space.append(" ".repeat(Math.max(0, length)));
+        newText.append(space).append(text).append(space);
+        int l = newText.length();
+        for (int i = 0; i < l; i++) {
+            if (i == l + length) {
+                break;
+            }
+            System.out.printf(" %s \r", newText.substring(i, i + length));
+            wait(msSpeed);
+        }
+    }
+
+    public static void scrollingTextLn(String text, int msSpeed) {
+        StringBuilder newText = new StringBuilder();
+        StringBuilder space = new StringBuilder();
+        space.append(" ".repeat(text.length()));
+        newText.append(space).append(text).append(space);
+//        newText.append(" ".repeat(Math.max(0, length))).append(text);
+        for (int i = 0; i < newText.length(); i++) {
+            if (i == newText.length() - text.length() - text.length() + 1) {
+                break;
+            }
+            System.out.printf("%s\r", newText.substring(i, i + text.length()));
+            wait(msSpeed);
+        }
+        System.out.println("\n");
     }
 
     public static void wait(int ms) {
