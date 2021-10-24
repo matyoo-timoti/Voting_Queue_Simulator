@@ -4,34 +4,57 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner input = new Scanner(System.in);
-    static int count = 0;
-    static Animations anim = new Animations();
 
     public static void main(String[] args) {
-//        var q = new Queues();
-//        ArrayList<Person> personList = new ArrayList<>();
-//        char ans = ' ';
-//        while (!(ans == 'n')) {
-//            personList.add(addPerson(count));
-//            System.out.print("Want to add more? y/n: ");
-//            ans = input.next().charAt(0);
-//            input.nextLine();
-//            count++;
-//        }
-//
-//        for (Person person : personList) {
-//            q.enqueue(person);
-//        }
-//        personList.clear();
-//        if (q.dequeue() == null) {
-//            System.out.println("There is nothing to see!");
-//        }
-//        displayQueue(q.dequeue());
-        anim.anim1(1, "as", 1);
+        var queue = new Queues();
+        int count = 0;
+        Animations.titleAnim();
+        System.out.println();
+        System.out.printf("%sVOTING QUEUE SIMULATOR%s\n", Color.CYAN_BOLD_BRIGHT, Color.RESET);
+        System.out.printf("%sBy Group 6 BSIT-2C %s\n", Color.MAGENTA_BRIGHT, Color.RESET);
+        String ans = "";
+        bigLoop:
+        while (true) {
+            while (!ans.equals("n")) {
+                queue.enqueue(addPerson(count++));
+                System.out.println();
+                System.out.print("Add another entry? y/n: ");
+                ans = input.next();
+                input.nextLine();
+                System.out.println();
+            }
+            ans = "";
+            queue.altSort(queue.getQueue());
+            while (!ans.equals("a")) {
+                if (queue.getQueue().isEmpty()) {
+                    System.out.println();
+                    System.out.println("There is no queue!");
+                    System.out.println("Do you want to add a new Entry? y/n: ");
+                    ans = input.next();
+                    input.nextLine();
+                    if (!(ans.equals("n"))) {
+                        break;
+                    }
+                    break bigLoop;
+                }
+                displayQueue(queue.dequeue());
+                Animations.anim1(1);
+                menu();
+                ans = input.next();
+                input.nextLine();
+                if (ans.equals("x"))
+                    break bigLoop;
+            }
+            Animations.clearConsole();
+            Animations.wait(500);
+        }
+        System.out.println();
+        System.out.println("\nSuccessfully exited the program. \nPlease come again!");
+        System.exit(0);
     }
 
     private static Person addPerson(int count) {
-        boolean isPriority = false;
+        boolean isPriority = true;
         System.out.println();
         System.out.println("Insert new individual");
         System.out.println("No. " + count);
@@ -40,35 +63,40 @@ public class Main {
         System.out.print("Last name: ");
         String lastname = input.nextLine();
         System.out.print("Priority? y/n: ");
-        if (!(input.next().charAt(0) == 'n'))
-            isPriority = true;
+        String ans = input.next();
+        input.nextLine();
+        if (!(ans.charAt(0) == 'n'))
+            isPriority = false;
         System.out.println();
-        System.out.println("────────────────────────────────────────────");
         return new Person(firstname, lastname, isPriority, count);
     }
 
     private static void displayQueue(Person current) {
         System.out.printf("""
-                        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                                
+                        ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺
                           %sNext in line:%s
-                          No. %s: %s %s %s
-                        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                          No. %s: %s %s %s%s%s
+                        ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺
+                                                
                         """,
                 Color.GREEN_BOLD, Color.RESET,
-                current.getNumber(), current.getFirstname(), current.getLastname(), ((current.isPriority()) ? "[Priority]" : ""));
+                current.getNumber(), current.getFirstname(), current.getLastname(),
+                Color.BLUE_BRIGHT, ((current.isPriority()) ? "[Priority]" : ""), Color.RESET
+        );
         System.out.println();
     }
 
     private static void menu() {
+        System.out.println();
         System.out.printf("""
-                        ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-                        ┃  %sNext [N]%s │  %sNext (Priority lane) [P]%s │  %sAdd New Entry [A]%s │ %sExit [X]%s   ┃
-                        ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-                         Answer: 
+                        ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                        ┃  %sNext [N]%s │  %sAdd New Entry [A]%s │ %sExit [X]%s ┃
+                        ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
                         """,
                 Color.GREEN_BOLD, Color.RESET,
-                Color.BLUE_BOLD, Color.RESET,
                 Color.YELLOW_BOLD, Color.RESET,
                 Color.RED_BOLD_BRIGHT, Color.RESET);
+        System.out.print("Answer: ");
     }
 }
