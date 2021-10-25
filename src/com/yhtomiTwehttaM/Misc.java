@@ -30,18 +30,14 @@ public class Misc {
                 blk, bg, res // Ground (right side) (1st)
         );*/
 
-        var abTxt = Color.WHITE_BOLD_BRIGHT; //Color of the text above the building
-        var res = Color.RESET; //Resets the color to default.
-        System.out.printf("""
-                          %s   Voting Station  %s
+        System.out.print("""
+                             Voting Station
                           ▕▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▏
                           ▕ ▇ ▇ ▇ ▇ ▇ ▇ ▇ ▇ ▏
                           ▕ ▇ ▇ ▇ ▇ ▇ ▇ ▇ ▇ ▏
                           ▕  ▁▁▁  ▇ ▇ ▇ ▇ ▇ ▏
-                          ▕▁▁▏╍▕▁▁▁▁▁▁▁▁▁▁▁▁▏🚕 🚗
-                        """,
-                abTxt, res //Bldg. name
-        );
+                          ▕▁▁▏╍▕▁▁▁▁▁▁▁▁▁▁▁▁▏🚘🚘🚘🚔🌳
+                        """);
         String[] anim1 = new String[] {
                 "                🧍 🧍 🧍  \r",
                 "                🚶 🧍 🧍  \r",
@@ -59,7 +55,7 @@ public class Misc {
         for (int i = 0; i < repeat; i++){
             for (String s : anim1) {
                 System.out.print(s);
-                wait(200);
+                wait(220);
             }
         }
         System.out.print("                🧍 🧍 🧍 \n");
@@ -201,7 +197,7 @@ public class Misc {
             if (i == l + length) {
                 break;
             }
-            System.out.printf(" %s \r", newText.substring(i, i + length));
+            System.out.printf("%s\r", newText.substring(i, i + length));
             wait(msSpeed);
         }
     }
