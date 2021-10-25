@@ -62,7 +62,8 @@ public class Main {
             }
         }
         System.out.println();
-        System.out.println("\nSuccessfully exited the program. \nPlease come again!");
+        System.out.println("\nSuccessfully exited the program.");
+        Misc.pig("Please come again! Oink!");
         System.exit(0);
     }
 
