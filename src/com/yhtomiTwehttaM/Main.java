@@ -23,7 +23,7 @@ public class Main {
                 queue.enqueue(addPerson(count++));
                 System.out.println();
                 System.out.print("Add another entry? y/n: ");
-                ans = input.next();
+                ans = input.next().trim();
                 input.nextLine();
                 System.out.println();
             }
@@ -36,7 +36,7 @@ public class Main {
                     System.out.println();
                     System.out.println("There is no queue!");
                     System.out.println("Do you want to add a new Entry? y/n: ");
-                    ans = input.next();
+                    ans = input.next().trim();
                     input.nextLine();
                     if (!(ans.equals("n"))) {
                         break;
@@ -79,11 +79,11 @@ public class Main {
         System.out.println("Insert new individual:");
         System.out.println("No. " + count);
         System.out.print("First name: ");
-        String firstname = input.nextLine();
+        String firstname = input.nextLine().trim().replaceAll(" +", " ");
         System.out.print("Last name: ");
-        String lastname = input.nextLine();
+        String lastname = input.nextLine().trim().replaceAll(" +", " ");
         System.out.print("Priority? y/n: ");
-        String ans = input.next();
+        String ans = input.next().trim();
         input.nextLine();
         if (!(ans.charAt(0) == 'n'))
             isPriority = true;
