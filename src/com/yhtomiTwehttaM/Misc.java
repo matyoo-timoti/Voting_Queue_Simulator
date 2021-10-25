@@ -59,7 +59,7 @@ public class Misc {
         for (int i = 0; i < repeat; i++){
             for (String s : anim1) {
                 System.out.print(s);
-                wait(190);
+                wait(200);
             }
         }
         System.out.print("                🧍 🧍 🧍 \n");
