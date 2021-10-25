@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 public class Misc {
 
     public static void anim1(int repeat) {
-        var gbb = Color.GREEN_BOLD_BRIGHT;
+/*        var gbb = Color.GREEN_BOLD_BRIGHT;
         var bg = Color.WHITE_BACKGROUND;
         var blk = Color.BLACK_BRIGHT;
         var y = Color.YELLOW_BRIGHT;
@@ -28,35 +28,61 @@ public class Misc {
                 blk, bg, res, // Ground (left side) (1st)
                 y, res, //doorknob
                 blk, bg, res // Ground (right side) (1st)
+        );*/
+
+        var abTxt = Color.WHITE_BOLD_BRIGHT; //Color of the text above the building
+        var res = Color.RESET; //Resets the color to default.
+        System.out.printf("""
+                          %s   Voting Station  %s
+                          ▕▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▏
+                          ▕ ▇ ▇ ▇ ▇ ▇ ▇ ▇ ▇ ▏
+                          ▕ ▇ ▇ ▇ ▇ ▇ ▇ ▇ ▇ ▏
+                          ▕  ▁▁▁  ▇ ▇ ▇ ▇ ▇ ▏
+                          ▕▁▁▏╍▕▁▁▁▁▁▁▁▁▁▁▁▁▏🚕 🚗
+                        """,
+                abTxt, res //Bldg. name
         );
-        for (int i = 0; i < repeat; i++) {
-            System.out.print("               🧍 🧍 🧍  \r");
-            wait(300);
-            System.out.print("               🚶 🧍 🧍  \r");
-            wait(300);
-            System.out.print("             🚶   🚶 🧍  \r");
-            wait(300);
-            System.out.print("            🚶   🚶  🚶   \r");
-            wait(300);
-            System.out.print("           🚶   🚶  🚶  🚶 \r");
-            wait(300);
-            System.out.print("          🚶    🧍 🚶  🚶  \r");
-            wait(300);
-            System.out.print("         🚶     🧍 🧍 🚶  \r");
-            wait(300);
-            System.out.print("        🚶      🧍 🧍 🧍 \r");
-            wait(300);
-            System.out.print("       🚶       🧍 🧍 🧍 \r");
-            wait(300);
-            System.out.print("      🚶        🧍 🧍 🧍 \r");
-            wait(300);
-            System.out.print("     🚶         🧍 🧍 🧍 \r");
-            wait(300);
-            System.out.print("     ⌃         🧍 🧍 🧍 \r");
-            wait(300);
-            System.out.print("               🧍 🧍 🧍 \n");
-            wait(300);
+        String[] anim1 = new String[] {
+                "                🧍 🧍 🧍  \r",
+                "                🚶 🧍 🧍  \r",
+                "              🚶   🚶 🧍  \r",
+                "             🚶   🚶  🚶   \r",
+                "            🚶   🚶  🚶  🚶 \r",
+                "           🚶    🧍 🚶  🚶  \r",
+                "          🚶     🧍 🧍 🚶  \r",
+                "         🚶      🧍 🧍 🧍 \r",
+                "        🚶       🧍 🧍 🧍 \r",
+                "       🚶        🧍 🧍 🧍 \r",
+                "      🚶         🧍 🧍 🧍 \r",
+                "      ⌃         🧍 🧍 🧍 \r"
+        };
+        for (int i = 0; i < repeat; i++){
+            for (String s : anim1) {
+                System.out.print(s);
+                wait(190);
+            }
         }
+        System.out.print("                🧍 🧍 🧍 \n");
+    }
+
+    public static void pig(String text) {
+        StringBuffer line = new StringBuffer();
+        line.append("━".repeat(text.length()));
+        System.out.printf("""
+                        %s
+                          ┏━╮╭━┓ ╭━%s━╮
+                          ┃┏┗┛┓┃╭┫ %s ┃
+                          ╰┓▋▋┏╯╯╰━%s━╯
+                         ╭━┻╮ ┗━━━━╮╭╮
+                         ┃▎▎┃      ┣━╯
+                         ╰━┳┻▅╯    ┃
+                           ╰━┳┓┏┳┓┏╯
+                             ┗┻┛┗┻┛
+                        %s
+                        """,
+                Color.WHITE,
+                line, text, line,
+                Color.RESET);
     }
 
     public static void titleAnim(int msSpeed) {
