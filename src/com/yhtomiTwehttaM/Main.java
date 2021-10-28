@@ -8,13 +8,13 @@ public class Main {
 
     public static void main(String[] args) {
         int count = 0;
-//        Misc.maximizeConsole();
+        Misc.maximizeConsole();
         System.out.println();
-//        Misc.titleAnim1(100);
+        Misc.titleAnim1(100);
         System.out.println();
         System.out.printf("%sVOTING QUEUE SIMULATOR%s\n", Color.CYAN_BOLD_BRIGHT, Color.RESET);
         System.out.print(Color.MAGENTA_BOLD_BRIGHT);
-//        Misc.scrollingTextLn("By Group 6 | BSIT-2C | 2021", 50);
+        Misc.scrollingTextLn("By Group 6 | BSIT-2C | 2021", 50);
         System.out.print(Color.RESET);
         String ans = "";
         bigLoop:
@@ -43,8 +43,6 @@ public class Main {
                     }
                     break bigLoop;
                 }
-//                System.out.printf("%sVOTING QUEUE SIMULATOR%s\n", Color.CYAN_BOLD_BRIGHT, Color.RESET);
-//                System.out.print(Color.BLUE_BRIGHT);
                 System.out.println("""
                                                 
                         ██░   ██░   ████░  ████████░ ██░ ███░  ██░  ██████░      ██████░    ██░   ██░ ███████░ ██░   ██░ ██████░
@@ -137,7 +135,7 @@ public class Main {
                               
                               %sNext in Line:%s
                               No. %s: %s %s %s%s%s
-                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
+                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
                             """,
                     line,
                     Color.GREEN_BOLD, Color.RESET,
