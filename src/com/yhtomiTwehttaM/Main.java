@@ -6,15 +6,15 @@ public class Main {
     static Scanner input = new Scanner(System.in);
     static Queues queue = new Queues();
 
-
     public static void main(String[] args) {
         int count = 0;
-        Misc.maximizeConsole();
-        Misc.titleAnim(90);
+//        Misc.maximizeConsole();
+        System.out.println();
+//        Misc.titleAnim1(100);
         System.out.println();
         System.out.printf("%sVOTING QUEUE SIMULATOR%s\n", Color.CYAN_BOLD_BRIGHT, Color.RESET);
         System.out.print(Color.MAGENTA_BOLD_BRIGHT);
-        Misc.scrollingTextLn("By Group 6 | BSIT-2C | 2021", 70);
+//        Misc.scrollingTextLn("By Group 6 | BSIT-2C | 2021", 50);
         System.out.print(Color.RESET);
         String ans = "";
         bigLoop:
@@ -44,13 +44,25 @@ public class Main {
                     break bigLoop;
                 }
 //                System.out.printf("%sVOTING QUEUE SIMULATOR%s\n", Color.CYAN_BOLD_BRIGHT, Color.RESET);
-                System.out.print(Color.CYAN);
+//                System.out.print(Color.BLUE_BRIGHT);
                 System.out.println("""
                                                 
-                        █ █ █▀█ ▀█▀ █ █▄ █ █▀▀  █▀█ █ █ █▀▀ █ █ █▀▀   █▀ █ █▀▄▀█ █ █ █   ▄▀█ ▀█▀ █▀█ █▀█
-                        ▀▄▀ █▄█  █  █ █ ▀█ █▄█  ▀▀█ █▄█ ██▄ █▄█ ██▄   ▄█ █ █ ▀ █ █▄█ █▄▄ █▀█  █  █▄█ █▀▄
+                        ██░   ██░   ████░  ████████░ ██░ ███░  ██░  ██████░      ██████░    ██░   ██░ ███████░ ██░   ██░ ██████░
+                        ██░   ██░ ██░   ██░   ██░    ██░ ████░ ██░ ██░         ██░     ██░  ██░   ██░ ██░      ██░   ██░ ██░
+                         ██░ ██░  ██░   ██░   ██░    ██░ ██░██░██░ ██   ███░   ██░ ██░ ██░  ██░   ██░ █████░   ██░   ██░ █████░
+                          ████░   ██░   ██░   ██░    ██░ ██░ ████░ ██░   ██░     ██████░    ██░   ██░ ██░      ██░   ██░ ██░
+                           ██░      ████░     ██░    ██░ ██░  ███░  ██████░         ██░      ██████░  ███████░  ██████░  ███████░
+                                                                                                                     
+                                                                                                                     
+                         ██████░ ██░ ███░   ███░ ██░   ██░ ██░       █████░  ████████░  █████░   ██████░
+                        ██░      ██░ ████░ ████░ ██░   ██░ ██░      ██░  ██░    ██░    ██░   ██░ ██░  ██░
+                         █████░  ██░ ██░████░██░ ██░   ██░ ██░      ███████░    ██░    ██░   ██░ ██████░
+                             ██░ ██░ ██░ ██░ ██░ ██░   ██░ ██░      ██░  ██░    ██░    ██░   ██░ ██░  ██░
+                        ██████░  ██░ ██░     ██░  ██████░  ███████░ ██░  ██░    ██░     ██████░  ██░  ██░
+                                                
+                        ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶
                         """);
-                System.out.print(Color.RESET);
+//                System.out.print(Color.RESET);
                 Person curr = queue.dequeue();
                 Person next = null;
                 if (!queue.getQueue().isEmpty()) {
@@ -92,47 +104,63 @@ public class Main {
     }
 
     private static void displayQueue(Person current, Person next) {
+        int CurrNameLength = current.getFirstname().length() + current.getLastname().length();
         String cP = (current.isPriority()) ? "[Priority]" : "";
+        String line = line(current);
         if (next == null) {
             System.out.printf("""
-                                                    
-                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺
+                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
                               %sFirst in line:%s
                               No. %s: %s %s %s%s%s
                               
                               %sNext in Line:%s
                               None
-                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺
-                                                    
+                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
                             """,
+                    line,
                     Color.GREEN_BOLD, Color.RESET,
                     current.getNumber(), current.getFirstname(), current.getLastname(),
                     Color.BLUE_BRIGHT, cP, Color.RESET,
-                    Color.GREEN_BOLD, Color.RESET
-                    );
-        }
-        else {
+                    Color.GREEN_BOLD, Color.RESET,
+                    line
+            );
+        } else {
+            int NextNameLength = next.getFirstname().length() + next.getLastname().length();
+            if (CurrNameLength < NextNameLength) {
+                line = line(next);
+            }
             String nP = (next.isPriority()) ? "[Priority]" : "";
             System.out.printf("""
-                                                
-                        ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺
-                          %sFirst in line:%s
-                          No. %s: %s %s %s%s%s
-                          
-                          %sNext in Line:%s
-                          No. %s: %s %s %s%s%s
-                        ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺
-                                                
-                        """,
+                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
+                              %sFirst in line:%s
+                              No. %s: %s %s %s%s%s
+                              
+                              %sNext in Line:%s
+                              No. %s: %s %s %s%s%s
+                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
+                            """,
+                    line,
                     Color.GREEN_BOLD, Color.RESET,
                     current.getNumber(), current.getFirstname(), current.getLastname(),
                     Color.BLUE_BRIGHT, cP, Color.RESET,
                     Color.GREEN_BOLD, Color.RESET,
                     next.getNumber(), next.getFirstname(), next.getLastname(),
-                    Color.BLUE_BRIGHT, nP, Color.RESET
+                    Color.BLUE_BRIGHT, nP, Color.RESET,
+                    line
             );
         }
         System.out.println();
+    }
+
+    private static String line(Person name) {
+        StringBuilder line = new StringBuilder();
+        int currName = name.getFirstname().length() + name.getLastname().length();
+        if (name.isPriority()) {
+            line.append("⁺".repeat(currName + 12));
+        } else {
+            line.append("⁺".repeat(currName));
+        }
+        return String.valueOf(line);
     }
 
     private static void menu(Person next) {
