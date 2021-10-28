@@ -47,7 +47,7 @@ public class Queues {
         either array and transfers it to the queue.
 */
         if (!temp1.isEmpty() || !temp2.isEmpty()) {
-            if ((temp1.get(0) != null)) {
+            if (!(temp1.isEmpty())) {
                 list.add(temp1.remove(0));
             } else {
                 list.add(temp2.remove(0));

@@ -85,7 +85,7 @@ public class Main {
         System.out.print("Priority? y/n: ");
         String ans = input.next().trim();
         input.nextLine();
-        if (!(ans.charAt(0) == 'n'))
+        if (!(ans.equalsIgnoreCase("n")))
             isPriority = true;
         System.out.println();
         return new Person(firstname, lastname, isPriority, count);
