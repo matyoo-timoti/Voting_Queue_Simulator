@@ -5,6 +5,23 @@ import java.util.Scanner;
 public class Main {
     static Scanner input = new Scanner(System.in);
     static Queues queue = new Queues();
+    static String title = """
+                                    
+            ██░   ██░   ████░  ████████░ ██░ ███░  ██░  ██████░      ██████░    ██░   ██░ ███████░ ██░   ██░ ██████░
+            ██░   ██░ ██░   ██░   ██░    ██░ ████░ ██░ ██░         ██░     ██░  ██░   ██░ ██░      ██░   ██░ ██░
+             ██░ ██░  ██░   ██░   ██░    ██░ ██░██░██░ ██   ███░   ██░ ██░ ██░  ██░   ██░ █████░   ██░   ██░ █████░
+              ████░   ██░   ██░   ██░    ██░ ██░ ████░ ██░   ██░     ██████░    ██░   ██░ ██░      ██░   ██░ ██░
+               ██░      ████░     ██░    ██░ ██░  ███░  ██████░         ██░      ██████░  ███████░  ██████░  ███████░
+                                                                                                         
+                                                                                                         
+             ██████░ ██░ ███░   ███░ ██░   ██░ ██░       █████░  ████████░  █████░   ██████░
+            ██░      ██░ ████░ ████░ ██░   ██░ ██░      ██░  ██░    ██░    ██░   ██░ ██░  ██░
+             █████░  ██░ ██░████░██░ ██░   ██░ ██░      ███████░    ██░    ██░   ██░ ██████░
+                 ██░ ██░ ██░ ██░ ██░ ██░   ██░ ██░      ██░  ██░    ██░    ██░   ██░ ██░  ██░
+            ██████░  ██░ ██░     ██░  ██████░  ███████░ ██░  ██░    ██░     ██████░  ██░  ██░
+                                    
+            ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶
+            """;
 
     public static void main(String[] args) {
         int count = 0;
@@ -16,51 +33,35 @@ public class Main {
         System.out.print(Color.MAGENTA_BOLD_BRIGHT);
         Misc.scrollingTextLn("By Group 6 | BSIT-2C | 2021", 50);
         System.out.print(Color.RESET);
-        String ans = "";
-        bigLoop:
-        while (true) {
-            while (!ans.equals("n")) {
+        String ans;
+        String yn;
+        outerLoop:
+        do {
+            while (true) {
                 queue.enqueue(addPerson(count++));
                 System.out.println();
                 System.out.print("Add another entry? y/n: ");
-                ans = input.next().trim();
-                input.nextLine();
+                yn = yesOrNo(input.nextLine().toLowerCase().charAt(0));
+                if (yn.equals("n")) {
+                    break;
+                }
                 System.out.println();
             }
             Misc.clearConsole();
             Misc.wait(500);
-            ans = "";
             queue.altSort(queue.getQueue());
-            while (!ans.equals("a")) {
+            do {
                 if (queue.getQueue().isEmpty()) {
                     System.out.println();
                     System.out.println("There is no queue!");
                     System.out.println("Do you want to add a new Entry? y/n: ");
-                    ans = input.next().trim();
-                    input.nextLine();
-                    if (!(ans.equals("n"))) {
+                    yn = yesOrNo(input.nextLine().toLowerCase().charAt(0));
+                    if (yn.equals("y")) {
                         break;
                     }
-                    break bigLoop;
+                    break outerLoop;
                 }
-                System.out.println("""
-                                                
-                        ██░   ██░   ████░  ████████░ ██░ ███░  ██░  ██████░      ██████░    ██░   ██░ ███████░ ██░   ██░ ██████░
-                        ██░   ██░ ██░   ██░   ██░    ██░ ████░ ██░ ██░         ██░     ██░  ██░   ██░ ██░      ██░   ██░ ██░
-                         ██░ ██░  ██░   ██░   ██░    ██░ ██░██░██░ ██   ███░   ██░ ██░ ██░  ██░   ██░ █████░   ██░   ██░ █████░
-                          ████░   ██░   ██░   ██░    ██░ ██░ ████░ ██░   ██░     ██████░    ██░   ██░ ██░      ██░   ██░ ██░
-                           ██░      ████░     ██░    ██░ ██░  ███░  ██████░         ██░      ██████░  ███████░  ██████░  ███████░
-                                                                                                                     
-                                                                                                                     
-                         ██████░ ██░ ███░   ███░ ██░   ██░ ██░       █████░  ████████░  █████░   ██████░
-                        ██░      ██░ ████░ ████░ ██░   ██░ ██░      ██░  ██░    ██░    ██░   ██░ ██░  ██░
-                         █████░  ██░ ██░████░██░ ██░   ██░ ██░      ███████░    ██░    ██░   ██░ ██████░
-                             ██░ ██░ ██░ ██░ ██░ ██░   ██░ ██░      ██░  ██░    ██░    ██░   ██░ ██░  ██░
-                        ██████░  ██░ ██░     ██░  ██████░  ███████░ ██░  ██░    ██░     ██████░  ██░  ██░
-                                                
-                        ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶
-                        """);
-//                System.out.print(Color.RESET);
+                System.out.println(title);
                 Person curr = queue.dequeue();
                 Person next = null;
                 if (!queue.getQueue().isEmpty()) {
@@ -69,14 +70,14 @@ public class Main {
                 displayQueue(curr, next);
                 Misc.anim1(1);
                 menu(next);
-                ans = input.next();
+                ans = checkInput(input.next().charAt(0));
                 input.nextLine();
                 if (ans.equals("x"))
-                    break bigLoop;
+                    break outerLoop;
                 Misc.clearConsole();
                 Misc.wait(500);
-            }
-        }
+            } while (!(ans.equals("a")));
+        } while (true);
         System.out.println();
         Misc.pig("Please come again! Oink!");
         System.out.println("\nSuccessfully exited the program.");
@@ -93,7 +94,7 @@ public class Main {
         System.out.print("Last name: ");
         String lastname = input.nextLine().trim().replaceAll(" +", " ");
         System.out.print("Priority? y/n: ");
-        String ans = input.next().trim();
+        String ans = yesOrNo(input.next().toLowerCase().charAt(0));
         input.nextLine();
         if (!(ans.equalsIgnoreCase("n")))
             isPriority = true;
@@ -182,5 +183,21 @@ public class Main {
                     Color.RED_BOLD_BRIGHT, Color.RESET);
         }
         System.out.print(" Choose from the options: ");
+    }
+
+    private static String yesOrNo(char ans) {
+        while (ans != 'n' && ans != 'y') {
+            System.out.print(" Is it a no or a yes? Please make up your mind:");
+            ans = input.next().toLowerCase().charAt(0);
+        }
+        return Character.toString(ans);
+    }
+
+    private static String checkInput(char ans) {
+        while (ans != 'n' && ans != 'a' && ans != 'x') {
+            System.out.printf(" %s is not on the options. Please enter again: ", ans);
+            ans = input.next().toLowerCase().charAt(0);
+        }
+        return Character.toString(ans);
     }
 }
