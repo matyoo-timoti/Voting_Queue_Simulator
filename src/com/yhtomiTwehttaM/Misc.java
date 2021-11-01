@@ -43,7 +43,7 @@ public class Misc {
         StringBuffer line = new StringBuffer();
         line.append("━".repeat(text.length()));
         System.out.printf("""
-                        %s
+                          
                           ┏━╮╭━┓ ╭━%s━╮
                           ┃┏┗┛┓┃╭┫ %s ┃
                           ╰┓▋▋┏╯╯╰━%s━╯
@@ -52,11 +52,9 @@ public class Misc {
                          ╰━┳┻▅╯    ┃
                            ╰━┳┓┏┳┓┏╯
                              ┗┻┛┗┻┛
-                        %s
+                        
                         """,
-                Color.WHITE,
-                line, text, line,
-                Color.RESET);
+                line, text, line);
     }
 
     public static void titleAnim1(int msSpeed) {
@@ -216,7 +214,6 @@ public class Misc {
             ex.printStackTrace(System.err);
         }
     }
-
 
     public static void click(int x, int y) throws AWTException {
         Robot bot = new Robot();
