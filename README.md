@@ -27,6 +27,6 @@ There may be certain methods that may not work for your IDE unless you configure
 clears the console screen (the same as the 'cls' command in CMD).
 
 Note: 
-• I adjusted some configrations on my IDE (I'm using IntelliJ) to make the console run smoothly.
+• I adjusted some configurations on my IDE (I'm using IntelliJ) to make the console run smoothly.
   I changed IntelliJ IDEA run console flush delay via Help | Edit Custom VM Options by adding this line:
   [ -Dconsole.flush.delay.ms=20 ] // (Do not include the square brackets ([]) and this comment.)
