@@ -7,31 +7,32 @@ public class Main {
     static Queues queue = new Queues();
     static String title = """
                                     
-            ██░   ██░   ████░  ████████░ ██░ ███░  ██░  ██████░      ██████░    ██░   ██░ ███████░ ██░   ██░ ██████░
-            ██░   ██░ ██░   ██░   ██░    ██░ ████░ ██░ ██░         ██░     ██░  ██░   ██░ ██░      ██░   ██░ ██░
-             ██░ ██░  ██░   ██░   ██░    ██░ ██░██░██░ ██   ███░   ██░ ██░ ██░  ██░   ██░ █████░   ██░   ██░ █████░
-              ████░   ██░   ██░   ██░    ██░ ██░ ████░ ██░   ██░     ██████░    ██░   ██░ ██░      ██░   ██░ ██░
-               ██░      ████░     ██░    ██░ ██░  ███░  ██████░         ██░      ██████░  ███████░  ██████░  ███████░
+             ██░   ██░   ████░  ████████░ ██░ ███░  ██░  ██████░      ██████░    ██░   ██░ ███████░ ██░   ██░ ██████░
+             ██░   ██░ ██░   ██░   ██░    ██░ ████░ ██░ ██░         ██░     ██░  ██░   ██░ ██░      ██░   ██░ ██░
+              ██░ ██░  ██░   ██░   ██░    ██░ ██░██░██░ ██   ███░   ██░ ██░ ██░  ██░   ██░ █████░   ██░   ██░ █████░
+               ████░   ██░   ██░   ██░    ██░ ██░ ████░ ██░   ██░     ██████░    ██░   ██░ ██░      ██░   ██░ ██░
+                ██░      ████░     ██░    ██░ ██░  ███░  ██████░        ██░       ██████░  ███████░  ██████░  ██████░
                                                                                                          
                                                                                                          
-             ██████░ ██░ ███░   ███░ ██░   ██░ ██░       █████░  ████████░  █████░   ██████░
-            ██░      ██░ ████░ ████░ ██░   ██░ ██░      ██░  ██░    ██░    ██░   ██░ ██░  ██░
-             █████░  ██░ ██░████░██░ ██░   ██░ ██░      ███████░    ██░    ██░   ██░ ██████░
-                 ██░ ██░ ██░ ██░ ██░ ██░   ██░ ██░      ██░  ██░    ██░    ██░   ██░ ██░  ██░
-            ██████░  ██░ ██░     ██░  ██████░  ███████░ ██░  ██░    ██░     ██████░  ██░  ██░
+              ██████░ ██░ ███░   ███░ ██░   ██░ ██░       █████░  ████████░  █████░   ██████░
+             ██░      ██░ ████░ ████░ ██░   ██░ ██░      ██░  ██░    ██░    ██░   ██░ ██░  ██░
+              █████░  ██░ ██░████░██░ ██░   ██░ ██░      ███████░    ██░    ██░   ██░ ██████░
+                  ██░ ██░ ██░ ██░ ██░ ██░   ██░ ██░      ██░  ██░    ██░    ██░   ██░ ██░  ██░
+             ██████░  ██░ ██░     ██░  ██████░  ███████░ ██░  ██░    ██░     ██████░  ██░  ██░
                                     
-            ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶
+             ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶ ✶
             """;
 
     public static void main(String[] args) {
         int count = 0;
-        Misc.maximizeConsole();
+//        Misc.maximizeConsole();
         System.out.println();
         Misc.titleAnim1(100);
         System.out.println();
-        System.out.printf("%sVOTING QUEUE SIMULATOR%s\n", Color.CYAN_BOLD_BRIGHT, Color.RESET);
+        System.out.printf("%s VOTING QUEUE SIMULATOR%s\n", Color.CYAN_BOLD_BRIGHT, Color.RESET);
         System.out.print(Color.MAGENTA_BOLD_BRIGHT);
-        Misc.scrollingTextLn("By Group 6 | BSIT-2C | 2021", 50);
+        System.out.print(" ");
+        Misc.scrollingTextLn(" By Group 6 | BSIT-2C | 2021", 50);
         System.out.print(Color.RESET);
         String ans;
         String yn;
@@ -40,7 +41,7 @@ public class Main {
             while (true) {
                 queue.enqueue(addPerson(count++));
                 System.out.println();
-                System.out.print("Add another entry? y/n: ");
+                System.out.print(" Add another entry? y/n: ");
                 yn = yesOrNo(input.nextLine().toLowerCase().charAt(0));
                 if (yn.equals("n")) {
                     break;
@@ -53,8 +54,8 @@ public class Main {
             do {
                 if (queue.getQueue().isEmpty()) {
                     System.out.println();
-                    System.out.println("There is no queue!");
-                    System.out.println("Do you want to add a new Entry? y/n: ");
+                    System.out.println(" There is no queue!");
+                    System.out.println(" Do you want to add a new Entry? y/n: ");
                     yn = yesOrNo(input.nextLine().toLowerCase().charAt(0));
                     if (yn.equals("y")) {
                         break;
@@ -68,9 +69,9 @@ public class Main {
                     next = queue.getQueue().peek();
                 }
                 displayQueue(curr, next);
-                Misc.anim1(1);
+                Misc.anim1(1, 230);
                 menu(next);
-                ans = checkInput(input.next().charAt(0));
+                ans = checkInput(input.next().toLowerCase().charAt(0));
                 input.nextLine();
                 if (ans.equals("x"))
                     break outerLoop;
@@ -80,23 +81,23 @@ public class Main {
         } while (true);
         System.out.println();
         Misc.pig("Please come again! Oink!");
-        System.out.println("\nSuccessfully exited the program.");
+        System.out.println("\n Successfully exited the program.");
         System.exit(0);
     }
 
     private static Person addPerson(int count) {
         boolean isPriority = false;
         System.out.println();
-        System.out.println("Insert new individual:");
-        System.out.println("No. " + count);
-        System.out.print("First name: ");
+        System.out.println(" Insert new individual:");
+        System.out.println(" No. " + count);
+        System.out.print(" First name: ");
         String firstname = input.nextLine().trim().replaceAll(" +", " ");
-        System.out.print("Last name: ");
+        System.out.print(" Last name: ");
         String lastname = input.nextLine().trim().replaceAll(" +", " ");
-        System.out.print("Priority? y/n: ");
+        System.out.print(" Priority? y/n: ");
         String ans = yesOrNo(input.next().toLowerCase().charAt(0));
         input.nextLine();
-        if (!(ans.equalsIgnoreCase("n")))
+        if (!(ans.equals("n")))
             isPriority = true;
         System.out.println();
         return new Person(firstname, lastname, isPriority, count);
@@ -108,13 +109,13 @@ public class Main {
         String line = line(current);
         if (next == null) {
             System.out.printf("""
-                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
-                              %sFirst in line:%s
-                              No. %s: %s %s %s%s%s
+                             ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
+                               %sPlease Enter:%s
+                               No. %s: %s %s %s%s%s
                               
-                              %sNext in Line:%s
-                              None
-                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
+                               %sNext in Line:%s
+                               None
+                             ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
                             """,
                     line,
                     Color.GREEN_BOLD, Color.RESET,
@@ -130,13 +131,13 @@ public class Main {
             }
             String nP = (next.isPriority()) ? "[Priority]" : "";
             System.out.printf("""
-                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
-                              %sFirst in line:%s
-                              No. %s: %s %s %s%s%s
+                             ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
+                               %sPlease Enter:%s
+                               No. %s: %s %s %s%s%s
                               
-                              %sNext in Line:%s
-                              No. %s: %s %s %s%s%s
-                            ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
+                               %sNext in Line:%s
+                               No. %s: %s %s %s%s%s
+                             ⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺%s⁺⁺
                             """,
                     line,
                     Color.GREEN_BOLD, Color.RESET,
@@ -166,18 +167,18 @@ public class Main {
         System.out.println();
         if (next != null) {
             System.out.printf("""
-                            ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-                            ┃  %sNext [N]%s │  %sAdd New Entry [A]%s │ %sExit [X]%s ┃
-                            ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                             ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                             ┃  %sNext [N]%s │  %sAdd New Entry [A]%s │ %sExit [X]%s ┃
+                             ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
                             """,
                     Color.GREEN_BOLD, Color.RESET,
                     Color.YELLOW_BOLD, Color.RESET,
                     Color.RED_BOLD_BRIGHT, Color.RESET);
         } else {
             System.out.printf("""
-                            ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-                            ┃  %sAdd New Entry [A]%s │ %sExit [X]%s ┃
-                            ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                             ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                             ┃  %sAdd New Entry [A]%s │ %sExit [X]%s ┃
+                             ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
                             """,
                     Color.YELLOW_BOLD, Color.RESET,
                     Color.RED_BOLD_BRIGHT, Color.RESET);
