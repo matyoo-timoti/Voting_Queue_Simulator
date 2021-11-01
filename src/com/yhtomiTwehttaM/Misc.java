@@ -217,6 +217,7 @@ public class Misc {
         }
     }
 
+
     public static void click(int x, int y) throws AWTException {
         Robot bot = new Robot();
         bot.mouseMove(x, y);
