@@ -13,7 +13,6 @@ public class Main {
                ████░   ██░   ██░   ██░    ██░ ██░ ████░ ██░   ██░     ██████░    ██░   ██░ ██░      ██░   ██░ ██░
                 ██░      ████░     ██░    ██░ ██░  ███░  ██████░        ██░       ██████░  ███████░  ██████░  ██████░
                                                                                                          
-                                                                                                         
               ██████░ ██░ ███░   ███░ ██░   ██░ ██░       █████░  ████████░  █████░   ██████░
              ██░      ██░ ████░ ████░ ██░   ██░ ██░      ██░  ██░    ██░    ██░   ██░ ██░  ██░
               █████░  ██░ ██░████░██░ ██░   ██░ ██░      ███████░    ██░    ██░   ██░ ██████░
@@ -190,6 +189,7 @@ public class Main {
         while (ans != 'n' && ans != 'y') {
             System.out.print(" Is it a no or a yes? Please make up your mind:");
             ans = input.next().toLowerCase().charAt(0);
+            input.nextLine();
         }
         return Character.toString(ans);
     }
@@ -198,6 +198,7 @@ public class Main {
         while (ans != 'n' && ans != 'a' && ans != 'x') {
             System.out.printf(" %s is not on the options. Please enter again: ", ans);
             ans = input.next().toLowerCase().charAt(0);
+            input.nextLine();
         }
         return Character.toString(ans);
     }
