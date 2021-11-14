@@ -21,7 +21,7 @@ menu with a few options. The form is composed of fields that requrires a first n
 
 If the user did not provide a firstname or a lastname, it'll display "N/A", and specifying the priority is crucial.
 The program will not proceed with a empty value for priority, the same goes for choosing an option on the menu, and for
-yes and no prompts.
+yes/no prompts.
 
 There may be certain methods that may not work for your IDE unless you configure it. Like the clearConsole() which 
 clears the console screen (the same as the 'cls' command in CMD).
